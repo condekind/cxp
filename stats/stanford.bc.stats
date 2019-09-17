@@ -1,0 +1,1029 @@
+file: RealMM.bc
+===== Alias Analysis Evaluator Report =====
+  608 Total Alias Queries Performed
+  87 no alias responses (14.3%)
+  506 may alias responses (83.2%)
+  0 partial alias responses (0.0%)
+  15 must alias responses (2.4%)
+  Alias Analysis Evaluator Pointer Alias Summary: 14%/83%/0%/2%
+  1055 Total ModRef Queries Performed
+  689 no mod/ref responses (65.3%)
+  19 mod responses (1.8%)
+  154 ref responses (14.5%)
+  193 mod & ref responses (18.2%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 65%/1%/14%/18%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+732 basicaa          - Number of times a GEP is decomposed
+ 35 bitcode-reader   - Number of Metadata records loaded
+  2 bitcode-reader   - Number of MDStrings loaded
+  1 build-libcalls   - Number of arguments inferred as nocapture
+  1 build-libcalls   - Number of functions inferred as nounwind
+  1 build-libcalls   - Number of arguments inferred as readonly
+  1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  3 early-cse        - Number of instructions CSE'd
+  1 early-cse        - Number of load instructions CSE'd
+  4 functionattrs    - Number of arguments marked nocapture
+  4 functionattrs    - Number of functions marked as norecurse
+  2 functionattrs    - Number of arguments marked readonly
+  1 functionattrs    - Number of functions marked writeonly
+ 37 globalopt        - Number of globals marked unnamed_addr
+  2 globalsmodref-aa - Number of functions that do not access memory
+  3 globalsmodref-aa - Number of functions that only read memory
+  1 gvn              - Number of blocks merged
+  1 gvn              - Number of instructions deleted
+  1 gvn              - Number of loads deleted
+  5 indvars          - Number of IV sign/zero extends eliminated
+  6 indvars          - Number of loop exit tests replaced
+  5 indvars          - Number of indvars widened
+ 38 instcombine      - Number of insts combined
+  7 instcombine      - Number of dead inst eliminated
+  1 instcombine      - Number of reassociations
+  9 instcount        - Number of Add insts
+ 10 instcount        - Number of And insts
+  9 instcount        - Number of BitCast insts
+ 60 instcount        - Number of Br insts
+ 38 instcount        - Number of Call insts
+  2 instcount        - Number of FAdd insts
+  1 instcount        - Number of FDiv insts
+  2 instcount        - Number of FMul insts
+ 15 instcount        - Number of GetElementPtr insts
+ 33 instcount        - Number of ICmp insts
+ 32 instcount        - Number of InsertElement insts
+  9 instcount        - Number of IntToPtr insts
+  6 instcount        - Number of LShr insts
+ 26 instcount        - Number of Load insts
+ 10 instcount        - Number of Mul insts
+  6 instcount        - Number of Or insts
+ 34 instcount        - Number of PHI insts
+  9 instcount        - Number of PtrToInt insts
+  6 instcount        - Number of Ret insts
+  3 instcount        - Number of SExt insts
+  1 instcount        - Number of SIToFP insts
+  1 instcount        - Number of SRem insts
+  6 instcount        - Number of Shl insts
+ 32 instcount        - Number of Store insts
+  9 instcount        - Number of Trunc insts
+ 66 instcount        - Number of basic blocks
+  6 instcount        - Number of non-external functions
+369 instcount        - Number of instructions (of all types)
+  1 instsimplify     - Number of reassociations
+  5 licm             - Number of instructions hoisted out of loop
+ 12 licm             - Number of instructions sunk out of loop
+  6 loop-rotate      - Number of loops rotated
+  1 loop-unroll      - Number of loops completely unrolled
+  2 loop-unroll      - Number of loops unrolled (completely or otherwise)
+  8 loop-unswitch    - Total number of instructions analyzed
+  3 loop-vectorize   - Number of loops analyzed for vectorization
+  6 mem2reg          - Number of PHI nodes inserted
+  9 mem2reg          - Number of alloca's promoted with a single store
+  4 memdep           - Number of uncached non-local ptr responses
+ 10 memory-builtins  - Number of arguments with unsolved size and offset
+ 16 scalar-evolution - Number of loops with predictable loop counts
+  9 simplifycfg      - Number of blocks simplified
+  1 sroa             - Maximum number of partitions per alloca
+  6 sroa             - Maximum number of uses of a partition
+ 53 sroa             - Number of alloca partition uses rewritten
+ 15 sroa             - Number of alloca partitions formed
+ 15 sroa             - Number of allocas analyzed for replacement
+ 53 sroa             - Number of instructions deleted
+ 15 sroa             - Number of allocas promoted to SSA values
+
+file: Oscar.bc
+===== Alias Analysis Evaluator Report =====
+  33741 Total Alias Queries Performed
+  815 no alias responses (2.4%)
+  32795 may alias responses (97.1%)
+  4 partial alias responses (0.0%)
+  127 must alias responses (0.3%)
+  Alias Analysis Evaluator Pointer Alias Summary: 2%/97%/0%/0%
+  40874 Total ModRef Queries Performed
+  30935 no mod/ref responses (75.6%)
+  0 mod responses (0.0%)
+  8153 ref responses (19.9%)
+  1786 mod & ref responses (4.3%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 75%/0%/19%/4%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+    1 SLP              - Number of vector instructions generated
+  747 basicaa          - Number of times the limit to decompose GEPs is reached
+54878 basicaa          - Number of times a GEP is decomposed
+   35 bitcode-reader   - Number of Metadata records loaded
+    2 bitcode-reader   - Number of MDStrings loaded
+    1 build-libcalls   - Number of arguments inferred as nocapture
+    2 build-libcalls   - Number of functions inferred as nounwind
+    1 build-libcalls   - Number of arguments inferred as readonly
+    1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+   85 early-cse        - Number of instructions CSE'd
+    3 early-cse        - Number of load instructions CSE'd
+    7 functionattrs    - Number of arguments marked nocapture
+    7 functionattrs    - Number of functions marked as norecurse
+    2 functionattrs    - Number of functions marked readnone
+    2 functionattrs    - Number of arguments marked readonly
+    1 functionattrs    - Number of functions marked writeonly
+    2 globalopt        - Number of globals deleted
+   40 globalopt        - Number of globals marked unnamed_addr
+    6 globalsmodref-aa - Number of functions that do not access memory
+    1 globalsmodref-aa - Number of global vars without address taken
+    7 globalsmodref-aa - Number of functions that only read memory
+    3 gvn              - Number of blocks merged
+   10 gvn              - Number of instructions deleted
+    1 gvn              - Number of loads deleted
+    5 gvn              - Number of instructions simplified
+   11 indvars          - Number of IV sign/zero extends eliminated
+    6 indvars          - Number of loop exit tests replaced
+    7 indvars          - Number of indvars widened
+  198 instcombine      - Number of insts combined
+   53 instcombine      - Number of dead inst eliminated
+   11 instcombine      - Number of reassociations
+    2 instcombine      - Number of library calls simplified
+    7 instcombine      - Number of instructions sunk
+    1 instcount        - Number of AShr insts
+   31 instcount        - Number of Add insts
+    2 instcount        - Number of Alloca insts
+   81 instcount        - Number of And insts
+   84 instcount        - Number of BitCast insts
+  358 instcount        - Number of Br insts
+  184 instcount        - Number of Call insts
+    2 instcount        - Number of ExtractElement insts
+   10 instcount        - Number of FAdd insts
+    5 instcount        - Number of FDiv insts
+   24 instcount        - Number of FMul insts
+    4 instcount        - Number of FPExt insts
+   10 instcount        - Number of FSub insts
+  180 instcount        - Number of GetElementPtr insts
+  208 instcount        - Number of ICmp insts
+  123 instcount        - Number of InsertElement insts
+   74 instcount        - Number of IntToPtr insts
+   46 instcount        - Number of LShr insts
+  150 instcount        - Number of Load insts
+   76 instcount        - Number of Mul insts
+   53 instcount        - Number of Or insts
+  190 instcount        - Number of PHI insts
+   74 instcount        - Number of PtrToInt insts
+   10 instcount        - Number of Ret insts
+    4 instcount        - Number of SDiv insts
+   17 instcount        - Number of SExt insts
+    1 instcount        - Number of SIToFP insts
+    6 instcount        - Number of Select insts
+   47 instcount        - Number of Shl insts
+    4 instcount        - Number of ShuffleVector insts
+  250 instcount        - Number of Store insts
+    3 instcount        - Number of Sub insts
+   48 instcount        - Number of Trunc insts
+    2 instcount        - Number of ZExt insts
+  368 instcount        - Number of basic blocks
+   10 instcount        - Number of non-external functions
+ 2362 instcount        - Number of instructions (of all types)
+    2 instsimplify     - Number of redundant instructions removed
+   14 jump-threading   - Number of terminators folded
+    9 lcssa            - Number of live out of a loop variables
+   20 licm             - Number of instructions hoisted out of loop
+    1 licm             - Number of load insts hoisted or sunk
+  119 licm             - Number of instructions sunk out of loop
+    6 loop-rotate      - Number of loops rotated
+    3 loop-unroll      - Number of loops completely unrolled
+    1 loop-unroll      - Number of loops unrolled with run-time trip counts
+    4 loop-unroll      - Number of loops unrolled (completely or otherwise)
+   21 loop-unswitch    - Total number of instructions analyzed
+    7 loop-vectorize   - Number of loops analyzed for vectorization
+    2 loop-vectorize   - Number of loops vectorized
+   22 mem2reg          - Number of PHI nodes inserted
+   20 mem2reg          - Number of alloca's promoted with a single store
+    2 memdep           - Number of uncached non-local ptr responses
+ 1756 memory-builtins  - Number of arguments with unsolved size and offset
+   14 reassociate      - Number of insts reassociated
+   28 scalar-evolution - Number of loops with predictable loop counts
+   20 scalar-evolution - Number of loops without predictable loop counts
+   22 sccp             - Number of basic blocks unreachable
+   17 sccp             - Number of instructions removed
+   40 simplifycfg      - Number of blocks simplified
+    1 sroa             - Maximum number of partitions per alloca
+   28 sroa             - Maximum number of uses of a partition
+  238 sroa             - Number of alloca partition uses rewritten
+   38 sroa             - Number of alloca partitions formed
+   42 sroa             - Number of allocas analyzed for replacement
+  238 sroa             - Number of instructions deleted
+   38 sroa             - Number of allocas promoted to SSA values
+
+file: Perm.bc
+===== Alias Analysis Evaluator Report =====
+  273 Total Alias Queries Performed
+  58 no alias responses (21.2%)
+  211 may alias responses (77.2%)
+  0 partial alias responses (0.0%)
+  4 must alias responses (1.4%)
+  Alias Analysis Evaluator Pointer Alias Summary: 21%/77%/0%/1%
+  10445 Total ModRef Queries Performed
+  60 no mod/ref responses (0.5%)
+  90 mod responses (0.8%)
+  109 ref responses (1.0%)
+  10186 mod & ref responses (97.5%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 0%/0%/1%/97%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  1 SLP              - Number of vector instructions generated
+378 basicaa          - Number of times a GEP is decomposed
+ 35 bitcode-reader   - Number of Metadata records loaded
+  2 bitcode-reader   - Number of MDStrings loaded
+  2 build-libcalls   - Number of arguments inferred as nocapture
+  2 build-libcalls   - Number of functions inferred as nounwind
+  2 build-libcalls   - Number of arguments inferred as readonly
+  1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  6 early-cse        - Number of instructions CSE'd
+  1 early-cse        - Number of load instructions CSE'd
+  2 functionattrs    - Number of arguments marked nocapture
+  4 functionattrs    - Number of functions marked as norecurse
+  2 functionattrs    - Number of functions marked writeonly
+  1 globalopt        - Number of globals deleted
+ 41 globalopt        - Number of globals marked unnamed_addr
+  2 globalsmodref-aa - Number of functions that do not access memory
+  1 globalsmodref-aa - Number of global vars without address taken
+  3 globalsmodref-aa - Number of functions that only read memory
+  3 gvn              - Number of blocks merged
+  1 gvn              - Number of equalities propagated
+  2 gvn              - Number of instructions deleted
+  1 gvn              - Number of loads PRE'd
+  2 indvars          - Number of IV sign/zero extends eliminated
+  3 indvars          - Number of loop exit tests replaced
+  2 indvars          - Number of indvars widened
+ 16 instcombine      - Number of insts combined
+  1 instcombine      - Number of library calls simplified
+  4 instcount        - Number of Add insts
+  5 instcount        - Number of And insts
+  2 instcount        - Number of BitCast insts
+ 23 instcount        - Number of Br insts
+124 instcount        - Number of Call insts
+ 10 instcount        - Number of GetElementPtr insts
+ 13 instcount        - Number of ICmp insts
+  8 instcount        - Number of InsertElement insts
+  4 instcount        - Number of IntToPtr insts
+  6 instcount        - Number of LShr insts
+ 18 instcount        - Number of Load insts
+  5 instcount        - Number of Mul insts
+  6 instcount        - Number of Or insts
+ 12 instcount        - Number of PHI insts
+  4 instcount        - Number of PtrToInt insts
+  7 instcount        - Number of Ret insts
+  2 instcount        - Number of SExt insts
+  6 instcount        - Number of Shl insts
+ 44 instcount        - Number of Store insts
+  7 instcount        - Number of Trunc insts
+ 30 instcount        - Number of basic blocks
+  7 instcount        - Number of non-external functions
+310 instcount        - Number of instructions (of all types)
+  2 licm             - Number of instructions hoisted out of loop
+  2 licm             - Number of instructions sunk out of loop
+  4 loop-rotate      - Number of loops rotated
+  3 loop-unroll      - Number of loops completely unrolled
+  3 loop-unroll      - Number of loops unrolled (completely or otherwise)
+  4 loop-unswitch    - Total number of instructions analyzed
+  1 loop-vectorize   - Number of loops analyzed for vectorization
+  4 mem2reg          - Number of PHI nodes inserted
+  5 mem2reg          - Number of alloca's promoted with a single store
+  2 memdep           - Number of uncached non-local ptr responses
+  6 scalar-evolution - Number of loops with predictable loop counts
+ 10 simplifycfg      - Number of blocks simplified
+  1 sroa             - Maximum number of partitions per alloca
+  7 sroa             - Maximum number of uses of a partition
+ 36 sroa             - Number of alloca partition uses rewritten
+  9 sroa             - Number of alloca partitions formed
+  9 sroa             - Number of allocas analyzed for replacement
+ 36 sroa             - Number of instructions deleted
+  9 sroa             - Number of allocas promoted to SSA values
+
+file: Puzzle.bc
+===== Alias Analysis Evaluator Report =====
+  103918 Total Alias Queries Performed
+  29162 no alias responses (28.0%)
+  74689 may alias responses (71.8%)
+  25 partial alias responses (0.0%)
+  42 must alias responses (0.0%)
+  Alias Analysis Evaluator Pointer Alias Summary: 28%/71%/0%/0%
+  46285 Total ModRef Queries Performed
+  9328 no mod/ref responses (20.1%)
+  6536 mod responses (14.1%)
+  3661 ref responses (7.9%)
+  26734 mod & ref responses (57.7%)
+  0 must responses (0.0%)
+  26 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 20%/14%/7%/57%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+    11 SLP                          - Number of vector instructions generated
+155836 basicaa                      - Number of times a GEP is decomposed
+    35 bitcode-reader               - Number of Metadata records loaded
+     2 bitcode-reader               - Number of MDStrings loaded
+     2 build-libcalls               - Number of arguments inferred as nocapture
+     2 build-libcalls               - Number of functions inferred as nounwind
+     2 build-libcalls               - Number of arguments inferred as readonly
+     1 cgscc-passmgr                - Maximum CGSCCPassMgr iterations on one SCC
+     5 correlated-value-propagation - Number of phis propagated
+    11 early-cse                    - Number of instructions CSE'd
+     3 early-cse                    - Number of load instructions CSE'd
+     5 functionattrs                - Number of functions marked as norecurse
+     1 functionattrs                - Number of functions marked readonly
+     1 functionattrs                - Number of functions marked writeonly
+     3 globalopt                    - Number of globals deleted
+    43 globalopt                    - Number of globals marked unnamed_addr
+     2 globalsmodref-aa             - Number of functions that do not access memory
+     3 globalsmodref-aa             - Number of global vars without address taken
+     5 globalsmodref-aa             - Number of functions that only read memory
+    93 gvn                          - Number of blocks merged
+     6 gvn                          - Number of instructions deleted
+     3 gvn                          - Number of loads deleted
+     1 gvn                          - Number of loads PRE'd
+    47 indvars                      - Number of IV sign/zero extends eliminated
+    31 indvars                      - Number of loop exit tests replaced
+    44 indvars                      - Number of indvars widened
+   365 instcombine                  - Number of insts combined
+     7 instcombine                  - Number of constant folds
+    39 instcombine                  - Number of dead inst eliminated
+     2 instcombine                  - Number of reassociations
+     3 instcombine                  - Number of library calls simplified
+    24 instcount                    - Number of Add insts
+    41 instcount                    - Number of And insts
+    40 instcount                    - Number of BitCast insts
+   202 instcount                    - Number of Br insts
+   222 instcount                    - Number of Call insts
+    32 instcount                    - Number of ExtractElement insts
+    56 instcount                    - Number of GetElementPtr insts
+   102 instcount                    - Number of ICmp insts
+    12 instcount                    - Number of InsertElement insts
+    38 instcount                    - Number of IntToPtr insts
+    24 instcount                    - Number of LShr insts
+    79 instcount                    - Number of Load insts
+    39 instcount                    - Number of Mul insts
+    25 instcount                    - Number of Or insts
+    88 instcount                    - Number of PHI insts
+    38 instcount                    - Number of PtrToInt insts
+     8 instcount                    - Number of Ret insts
+    13 instcount                    - Number of SExt insts
+    24 instcount                    - Number of Shl insts
+     4 instcount                    - Number of ShuffleVector insts
+   488 instcount                    - Number of Store insts
+    27 instcount                    - Number of Trunc insts
+   210 instcount                    - Number of basic blocks
+     8 instcount                    - Number of non-external functions
+  1626 instcount                    - Number of instructions (of all types)
+     1 instsimplify                 - Number of redundant instructions removed
+     5 lcssa                        - Number of live out of a loop variables
+     4 licm                         - Number of instructions hoisted out of loop
+     2 licm                         - Number of load insts hoisted or sunk
+    83 licm                         - Number of instructions sunk out of loop
+     3 local                        - Number of unreachable basic blocks removed
+     2 loop-delete                  - Number of loops deleted
+     2 loop-idiom                   - Number of memset's formed from loop stores
+    51 loop-rotate                  - Number of loops rotated
+    39 loop-unroll                  - Number of loops completely unrolled
+    39 loop-unroll                  - Number of loops unrolled (completely or otherwise)
+    94 loop-unswitch                - Total number of instructions analyzed
+     6 loop-vectorize               - Number of loops analyzed for vectorization
+     3 loop-vectorize               - Number of loops vectorized
+    54 mem2reg                      - Number of PHI nodes inserted
+     9 mem2reg                      - Number of alloca's promoted with a single store
+    25 memcpyopt                    - Number of memsets inferred
+     3 memdep                       - Number of block queries that were completely cached
+    12 memdep                       - Number of fully cached non-local ptr responses
+    27 memdep                       - Number of uncached non-local ptr responses
+    31 reassociate                  - Number of insts reassociated
+    87 scalar-evolution             - Number of loops with predictable loop counts
+     2 scalar-evolution             - Number of loops without predictable loop counts
+    25 sccp                         - Number of instructions removed
+   141 simplifycfg                  - Number of blocks simplified
+     1 sroa                         - Maximum number of partitions per alloca
+    74 sroa                         - Maximum number of uses of a partition
+   297 sroa                         - Number of alloca partition uses rewritten
+    21 sroa                         - Number of alloca partitions formed
+    21 sroa                         - Number of allocas analyzed for replacement
+   297 sroa                         - Number of instructions deleted
+    21 sroa                         - Number of allocas promoted to SSA values
+
+file: Quicksort.bc
+===== Alias Analysis Evaluator Report =====
+  760 Total Alias Queries Performed
+  130 no alias responses (17.1%)
+  617 may alias responses (81.1%)
+  2 partial alias responses (0.2%)
+  11 must alias responses (1.4%)
+  Alias Analysis Evaluator Pointer Alias Summary: 17%/81%/0%/1%
+  1263 Total ModRef Queries Performed
+  800 no mod/ref responses (63.3%)
+  23 mod responses (1.8%)
+  271 ref responses (21.4%)
+  169 mod & ref responses (13.3%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 63%/1%/21%/13%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+878 basicaa          - Number of times a GEP is decomposed
+ 35 bitcode-reader   - Number of Metadata records loaded
+  2 bitcode-reader   - Number of MDStrings loaded
+  2 build-libcalls   - Number of arguments inferred as nocapture
+  2 build-libcalls   - Number of functions inferred as nounwind
+  2 build-libcalls   - Number of arguments inferred as readonly
+  1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+ 14 early-cse        - Number of instructions CSE'd
+  6 early-cse        - Number of load instructions CSE'd
+  3 functionattrs    - Number of functions marked as norecurse
+  1 functionattrs    - Number of functions marked writeonly
+  1 globalopt        - Number of globals deleted
+ 40 globalopt        - Number of globals marked unnamed_addr
+  2 globalsmodref-aa - Number of functions that do not access memory
+  1 globalsmodref-aa - Number of global vars without address taken
+  3 globalsmodref-aa - Number of functions that only read memory
+ 10 gvn              - Number of instructions deleted
+  8 gvn              - Number of instructions simplified
+  3 indvars          - Number of IV sign/zero extends eliminated
+  2 indvars          - Number of loop exit tests replaced
+  3 indvars          - Number of indvars widened
+ 47 instcombine      - Number of insts combined
+  3 instcombine      - Number of dead inst eliminated
+  1 instcombine      - Number of library calls simplified
+  2 instcombine      - Number of instructions sunk
+ 10 instcount        - Number of Add insts
+  9 instcount        - Number of And insts
+  4 instcount        - Number of BitCast insts
+ 81 instcount        - Number of Br insts
+ 37 instcount        - Number of Call insts
+ 23 instcount        - Number of GetElementPtr insts
+ 42 instcount        - Number of ICmp insts
+  8 instcount        - Number of InsertElement insts
+  8 instcount        - Number of IntToPtr insts
+ 11 instcount        - Number of LShr insts
+ 30 instcount        - Number of Load insts
+  9 instcount        - Number of Mul insts
+ 11 instcount        - Number of Or insts
+ 49 instcount        - Number of PHI insts
+  8 instcount        - Number of PtrToInt insts
+  6 instcount        - Number of Ret insts
+  1 instcount        - Number of SDiv insts
+  5 instcount        - Number of SExt insts
+  1 instcount        - Number of SRem insts
+ 11 instcount        - Number of Shl insts
+ 39 instcount        - Number of Store insts
+ 15 instcount        - Number of Trunc insts
+ 87 instcount        - Number of basic blocks
+  6 instcount        - Number of non-external functions
+418 instcount        - Number of instructions (of all types)
+  1 instsimplify     - Number of reassociations
+  6 instsimplify     - Number of redundant instructions removed
+ 42 lcssa            - Number of live out of a loop variables
+ 21 licm             - Number of instructions sunk out of loop
+  2 loop-rotate      - Number of loops rotated
+ 20 loop-unswitch    - Total number of instructions analyzed
+  4 loop-vectorize   - Number of loops analyzed for vectorization
+  8 mem2reg          - Number of PHI nodes inserted
+  8 mem2reg          - Number of alloca's promoted with a single store
+  6 memdep           - Number of uncached non-local ptr responses
+ 65 memory-builtins  - Number of arguments with unsolved size and offset
+  1 reassociate      - Number of insts reassociated
+  6 scalar-evolution - Number of loops with predictable loop counts
+ 14 scalar-evolution - Number of loops without predictable loop counts
+ 12 simplifycfg      - Number of blocks simplified
+  1 simplifycfg      - Number of common instructions sunk down to the end block
+  1 sroa             - Maximum number of partitions per alloca
+ 12 sroa             - Maximum number of uses of a partition
+ 68 sroa             - Number of alloca partition uses rewritten
+ 12 sroa             - Number of alloca partitions formed
+ 12 sroa             - Number of allocas analyzed for replacement
+ 68 sroa             - Number of instructions deleted
+ 12 sroa             - Number of allocas promoted to SSA values
+  1 tailcallelim     - Number of tail calls removed
+  1 tailcallelim     - Number of return duplicated
+
+file: Towers.bc
+===== Alias Analysis Evaluator Report =====
+  2131 Total Alias Queries Performed
+  588 no alias responses (27.5%)
+  1530 may alias responses (71.7%)
+  0 partial alias responses (0.0%)
+  13 must alias responses (0.6%)
+  Alias Analysis Evaluator Pointer Alias Summary: 27%/71%/0%/0%
+  11216 Total ModRef Queries Performed
+  356 no mod/ref responses (3.1%)
+  107 mod responses (0.9%)
+  387 ref responses (3.4%)
+  10366 mod & ref responses (92.4%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 3%/0%/3%/92%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2746 basicaa          - Number of times a GEP is decomposed
+  35 bitcode-reader   - Number of Metadata records loaded
+   2 bitcode-reader   - Number of MDStrings loaded
+   2 build-libcalls   - Number of arguments inferred as nocapture
+   2 build-libcalls   - Number of functions inferred as nounwind
+   2 build-libcalls   - Number of arguments inferred as readonly
+   1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  24 early-cse        - Number of instructions CSE'd
+   8 early-cse        - Number of load instructions CSE'd
+   3 functionattrs    - Number of functions marked as norecurse
+   2 functionattrs    - Number of functions marked writeonly
+   1 globalopt        - Number of globals deleted
+  47 globalopt        - Number of globals marked unnamed_addr
+   2 globalsmodref-aa - Number of functions that do not access memory
+   1 globalsmodref-aa - Number of global vars without address taken
+   3 globalsmodref-aa - Number of functions that only read memory
+   2 gvn              - Number of blocks merged
+   1 gvn              - Number of equalities propagated
+   2 gvn              - Number of instructions deleted
+   1 gvn              - Number of instructions simplified
+   1 gvn              - Number of loads PRE'd
+   1 indvars          - Number of IV sign/zero extends eliminated
+   2 indvars          - Number of loop exit tests replaced
+   1 indvars          - Number of indvars widened
+  29 instcombine      - Number of insts combined
+   7 instcombine      - Number of dead inst eliminated
+   1 instcombine      - Number of library calls simplified
+   4 instcount        - Number of Add insts
+  14 instcount        - Number of And insts
+   8 instcount        - Number of BitCast insts
+  61 instcount        - Number of Br insts
+ 140 instcount        - Number of Call insts
+  29 instcount        - Number of GetElementPtr insts
+  32 instcount        - Number of ICmp insts
+   8 instcount        - Number of InsertElement insts
+  13 instcount        - Number of IntToPtr insts
+  13 instcount        - Number of LShr insts
+  43 instcount        - Number of Load insts
+  14 instcount        - Number of Mul insts
+  13 instcount        - Number of Or insts
+  36 instcount        - Number of PHI insts
+  13 instcount        - Number of PtrToInt insts
+  12 instcount        - Number of Ret insts
+   7 instcount        - Number of SExt insts
+  13 instcount        - Number of Shl insts
+ 116 instcount        - Number of Store insts
+   2 instcount        - Number of Sub insts
+  14 instcount        - Number of Trunc insts
+  73 instcount        - Number of basic blocks
+  12 instcount        - Number of non-external functions
+ 605 instcount        - Number of instructions (of all types)
+   1 instsimplify     - Number of redundant instructions removed
+   6 lcssa            - Number of live out of a loop variables
+   1 licm             - Number of instructions hoisted out of loop
+   2 licm             - Number of instructions sunk out of loop
+   4 loop-rotate      - Number of loops rotated
+   2 loop-unroll      - Number of loops completely unrolled
+   2 loop-unroll      - Number of loops unrolled (completely or otherwise)
+   4 loop-unswitch    - Total number of instructions analyzed
+   2 loop-vectorize   - Number of loops analyzed for vectorization
+   6 mem2reg          - Number of PHI nodes inserted
+  17 mem2reg          - Number of alloca's promoted with a single store
+   7 memdep           - Number of uncached non-local ptr responses
+   8 scalar-evolution - Number of loops with predictable loop counts
+  24 simplifycfg      - Number of blocks simplified
+   1 sroa             - Maximum number of partitions per alloca
+   7 sroa             - Maximum number of uses of a partition
+  77 sroa             - Number of alloca partition uses rewritten
+  23 sroa             - Number of alloca partitions formed
+  23 sroa             - Number of allocas analyzed for replacement
+  77 sroa             - Number of instructions deleted
+  23 sroa             - Number of allocas promoted to SSA values
+   1 tailcallelim     - Number of tail calls removed
+   1 tailcallelim     - Number of return duplicated
+
+file: Queens.bc
+===== Alias Analysis Evaluator Report =====
+  11573 Total Alias Queries Performed
+  358 no alias responses (3.0%)
+  11153 may alias responses (96.3%)
+  3 partial alias responses (0.0%)
+  59 must alias responses (0.5%)
+  Alias Analysis Evaluator Pointer Alias Summary: 3%/96%/0%/0%
+  22691 Total ModRef Queries Performed
+  15346 no mod/ref responses (67.6%)
+  0 mod responses (0.0%)
+  4466 ref responses (19.6%)
+  2879 mod & ref responses (12.6%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 67%/0%/19%/12%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+11286 basicaa                      - Number of times a GEP is decomposed
+   35 bitcode-reader               - Number of Metadata records loaded
+    2 bitcode-reader               - Number of MDStrings loaded
+    2 build-libcalls               - Number of arguments inferred as nocapture
+    2 build-libcalls               - Number of functions inferred as nounwind
+    2 build-libcalls               - Number of arguments inferred as readonly
+    1 cgscc-passmgr                - Maximum CGSCCPassMgr iterations on one SCC
+    1 correlated-value-propagation - Number of phis propagated
+   18 early-cse                    - Number of instructions CSE'd
+    1 early-cse                    - Number of load instructions CSE'd
+    5 functionattrs                - Number of arguments marked nocapture
+    2 functionattrs                - Number of functions marked as norecurse
+    1 functionattrs                - Number of functions marked writeonly
+    1 globalopt                    - Number of globals deleted
+   41 globalopt                    - Number of globals marked unnamed_addr
+    2 globalsmodref-aa             - Number of functions that do not access memory
+    1 globalsmodref-aa             - Number of global vars without address taken
+    3 globalsmodref-aa             - Number of functions that only read memory
+    1 gvn                          - Number of blocks merged
+    4 gvn                          - Number of instructions deleted
+    1 gvn                          - Number of loads deleted
+    1 gvn                          - Number of loads PRE'd
+    5 indvars                      - Number of IV sign/zero extends eliminated
+    3 indvars                      - Number of loop exit tests replaced
+    3 indvars                      - Number of indvars widened
+   62 instcombine                  - Number of insts combined
+    1 instcombine                  - Number of constant folds
+    4 instcombine                  - Number of dead inst eliminated
+    7 instcombine                  - Number of reassociations
+    1 instcombine                  - Number of library calls simplified
+   27 instcount                    - Number of Add insts
+    5 instcount                    - Number of Alloca insts
+   57 instcount                    - Number of And insts
+   53 instcount                    - Number of BitCast insts
+  216 instcount                    - Number of Br insts
+  141 instcount                    - Number of Call insts
+   46 instcount                    - Number of GetElementPtr insts
+  124 instcount                    - Number of ICmp insts
+    8 instcount                    - Number of InsertElement insts
+   55 instcount                    - Number of IntToPtr insts
+   31 instcount                    - Number of LShr insts
+   72 instcount                    - Number of Load insts
+   56 instcount                    - Number of Mul insts
+   31 instcount                    - Number of Or insts
+  102 instcount                    - Number of PHI insts
+   55 instcount                    - Number of PtrToInt insts
+    6 instcount                    - Number of Ret insts
+   19 instcount                    - Number of SExt insts
+   31 instcount                    - Number of Shl insts
+   77 instcount                    - Number of Store insts
+   35 instcount                    - Number of Trunc insts
+    1 instcount                    - Number of Xor insts
+  222 instcount                    - Number of basic blocks
+    6 instcount                    - Number of non-external functions
+ 1248 instcount                    - Number of instructions (of all types)
+    1 instsimplify                 - Number of reassociations
+    1 jump-threading               - Number of terminators folded
+    3 jump-threading               - Number of jumps threaded
+   10 lcssa                        - Number of live out of a loop variables
+    5 licm                         - Number of instructions hoisted out of loop
+   20 licm                         - Number of instructions sunk out of loop
+    3 local                        - Number of unreachable basic blocks removed
+    4 loop-rotate                  - Number of loops rotated
+    2 loop-unroll                  - Number of loops completely unrolled
+    2 loop-unroll                  - Number of loops unrolled (completely or otherwise)
+    1 loop-unswitch                - Number of branches unswitched
+   26 loop-unswitch                - Total number of instructions analyzed
+    4 loop-vectorize               - Number of loops analyzed for vectorization
+    4 mem2reg                      - Number of PHI nodes inserted
+    8 mem2reg                      - Number of alloca's promoted with a single store
+    9 memdep                       - Number of uncached non-local ptr responses
+  146 memory-builtins              - Number of arguments with unsolved size and offset
+    3 reassociate                  - Number of insts reassociated
+    8 scalar-evolution             - Number of loops with predictable loop counts
+    1 sccp                         - Number of basic blocks unreachable
+   29 simplifycfg                  - Number of blocks simplified
+    1 sroa                         - Maximum number of partitions per alloca
+   14 sroa                         - Maximum number of uses of a partition
+   72 sroa                         - Number of alloca partition uses rewritten
+   12 sroa                         - Number of alloca partitions formed
+   22 sroa                         - Number of allocas analyzed for replacement
+   72 sroa                         - Number of instructions deleted
+   12 sroa                         - Number of allocas promoted to SSA values
+
+file: Treesort.bc
+===== Alias Analysis Evaluator Report =====
+  1412 Total Alias Queries Performed
+  260 no alias responses (18.4%)
+  1111 may alias responses (78.6%)
+  12 partial alias responses (0.8%)
+  29 must alias responses (2.0%)
+  Alias Analysis Evaluator Pointer Alias Summary: 18%/78%/0%/2%
+  2028 Total ModRef Queries Performed
+  898 no mod/ref responses (44.2%)
+  58 mod responses (2.8%)
+  631 ref responses (31.1%)
+  438 mod & ref responses (21.5%)
+  0 must responses (0.0%)
+  3 must mod responses (0.1%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 44%/2%/31%/21%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+1414 basicaa          - Number of times a GEP is decomposed
+   4 bdce             - Number of instructions removed (unused)
+  35 bitcode-reader   - Number of Metadata records loaded
+   2 bitcode-reader   - Number of MDStrings loaded
+   2 build-libcalls   - Number of arguments inferred as nocapture
+   2 build-libcalls   - Number of functions inferred as nounwind
+   2 build-libcalls   - Number of arguments inferred as readonly
+   1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  15 early-cse        - Number of instructions CSE'd
+  13 early-cse        - Number of load instructions CSE'd
+   1 early-cse        - Number of instructions simplified or DCE'd
+   3 functionattrs    - Number of arguments marked nocapture
+   3 functionattrs    - Number of functions marked as norecurse
+   1 functionattrs    - Number of functions marked readonly
+   1 functionattrs    - Number of arguments marked readonly
+   1 functionattrs    - Number of functions marked writeonly
+   1 globalopt        - Number of globals deleted
+  44 globalopt        - Number of globals marked unnamed_addr
+   2 globalsmodref-aa - Number of functions that do not access memory
+   1 globalsmodref-aa - Number of global vars without address taken
+   5 globalsmodref-aa - Number of functions that only read memory
+   7 gvn              - Number of instructions deleted
+   1 gvn              - Number of loads deleted
+   2 gvn              - Number of instructions simplified
+   1 gvn              - Number of loads PRE'd
+   2 indvars          - Number of IV sign/zero extends eliminated
+   3 indvars          - Number of loop exit tests replaced
+   2 indvars          - Number of indvars widened
+  76 instcombine      - Number of insts combined
+  10 instcombine      - Number of dead inst eliminated
+   1 instcombine      - Number of library calls simplified
+   6 instcount        - Number of Add insts
+  18 instcount        - Number of And insts
+  16 instcount        - Number of BitCast insts
+ 101 instcount        - Number of Br insts
+  54 instcount        - Number of Call insts
+  37 instcount        - Number of GetElementPtr insts
+  59 instcount        - Number of ICmp insts
+  24 instcount        - Number of InsertElement insts
+  16 instcount        - Number of IntToPtr insts
+  18 instcount        - Number of LShr insts
+  57 instcount        - Number of Load insts
+  17 instcount        - Number of Mul insts
+  18 instcount        - Number of Or insts
+  51 instcount        - Number of PHI insts
+  16 instcount        - Number of PtrToInt insts
+   9 instcount        - Number of Ret insts
+   2 instcount        - Number of SExt insts
+   1 instcount        - Number of SRem insts
+  18 instcount        - Number of Shl insts
+  52 instcount        - Number of Store insts
+  20 instcount        - Number of Trunc insts
+   2 instcount        - Number of ZExt insts
+ 110 instcount        - Number of basic blocks
+   8 instcount        - Number of non-external functions
+ 612 instcount        - Number of instructions (of all types)
+   1 instsimplify     - Number of reassociations
+   2 instsimplify     - Number of redundant instructions removed
+   8 lcssa            - Number of live out of a loop variables
+  20 licm             - Number of instructions sunk out of loop
+   4 loop-rotate      - Number of loops rotated
+  10 loop-unswitch    - Total number of instructions analyzed
+   4 loop-vectorize   - Number of loops analyzed for vectorization
+   5 mem2reg          - Number of PHI nodes inserted
+   8 mem2reg          - Number of alloca's promoted with a single store
+   2 memcpyopt        - Number of memsets inferred
+   3 memdep           - Number of block queries that were completely cached
+   2 memdep           - Number of fully cached non-local ptr responses
+  22 memdep           - Number of uncached non-local ptr responses
+   2 memory-builtins  - Number of load instructions with unsolved size and offset
+   9 scalar-evolution - Number of loops with predictable loop counts
+   2 scalar-evolution - Number of loops without predictable loop counts
+  28 simplifycfg      - Number of blocks simplified
+   1 simplifycfg      - Number of common instructions sunk down to the end block
+   1 sroa             - Maximum number of partitions per alloca
+   9 sroa             - Maximum number of uses of a partition
+  64 sroa             - Number of alloca partition uses rewritten
+  12 sroa             - Number of alloca partitions formed
+  12 sroa             - Number of allocas analyzed for replacement
+  64 sroa             - Number of instructions deleted
+  12 sroa             - Number of allocas promoted to SSA values
+   2 tailcallelim     - Number of tail calls removed
+   3 tailcallelim     - Number of return duplicated
+
+file: Bubblesort.bc
+===== Alias Analysis Evaluator Report =====
+  2223 Total Alias Queries Performed
+  197 no alias responses (8.8%)
+  2011 may alias responses (90.4%)
+  2 partial alias responses (0.0%)
+  13 must alias responses (0.5%)
+  Alias Analysis Evaluator Pointer Alias Summary: 8%/90%/0%/0%
+  1922 Total ModRef Queries Performed
+  996 no mod/ref responses (51.8%)
+  23 mod responses (1.1%)
+  659 ref responses (34.2%)
+  244 mod & ref responses (12.6%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 51%/1%/34%/12%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2900 basicaa          - Number of times a GEP is decomposed
+  35 bitcode-reader   - Number of Metadata records loaded
+   2 bitcode-reader   - Number of MDStrings loaded
+   2 build-libcalls   - Number of arguments inferred as nocapture
+   2 build-libcalls   - Number of functions inferred as nounwind
+   2 build-libcalls   - Number of arguments inferred as readonly
+   1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  17 early-cse        - Number of instructions CSE'd
+   8 early-cse        - Number of load instructions CSE'd
+   3 functionattrs    - Number of functions marked as norecurse
+   1 functionattrs    - Number of functions marked writeonly
+   1 globalopt        - Number of globals deleted
+  40 globalopt        - Number of globals marked unnamed_addr
+   2 globalsmodref-aa - Number of functions that do not access memory
+   1 globalsmodref-aa - Number of global vars without address taken
+   3 globalsmodref-aa - Number of functions that only read memory
+   2 gvn              - Number of instructions deleted
+   1 gvn              - Number of instructions simplified
+   1 gvn              - Number of loads PRE'd
+   3 indvars          - Number of IV comparisons eliminated
+   4 indvars          - Number of IV sign/zero extends eliminated
+   3 indvars          - Number of loop exit tests replaced
+   1 indvars          - Number of exit values replaced
+   3 indvars          - Number of indvars widened
+  40 instcombine      - Number of insts combined
+   8 instcombine      - Number of dead inst eliminated
+   2 instcombine      - Number of reassociations
+   1 instcombine      - Number of library calls simplified
+   1 instcombine      - Number of instructions sunk
+  11 instcount        - Number of Add insts
+  14 instcount        - Number of And insts
+   4 instcount        - Number of BitCast insts
+  69 instcount        - Number of Br insts
+  29 instcount        - Number of Call insts
+  40 instcount        - Number of GetElementPtr insts
+  37 instcount        - Number of ICmp insts
+   8 instcount        - Number of InsertElement insts
+  12 instcount        - Number of IntToPtr insts
+  12 instcount        - Number of LShr insts
+  29 instcount        - Number of Load insts
+  13 instcount        - Number of Mul insts
+  12 instcount        - Number of Or insts
+  47 instcount        - Number of PHI insts
+  12 instcount        - Number of PtrToInt insts
+   5 instcount        - Number of Ret insts
+   2 instcount        - Number of SExt insts
+   1 instcount        - Number of SRem insts
+  12 instcount        - Number of Shl insts
+  57 instcount        - Number of Store insts
+   2 instcount        - Number of Sub insts
+  14 instcount        - Number of Trunc insts
+  74 instcount        - Number of basic blocks
+   5 instcount        - Number of non-external functions
+ 442 instcount        - Number of instructions (of all types)
+   1 instsimplify     - Number of reassociations
+   2 instsimplify     - Number of redundant instructions removed
+   1 jump-threading   - Number of terminators folded
+   3 lcssa            - Number of live out of a loop variables
+   1 licm             - Number of memory locations promoted to registers
+  13 licm             - Number of instructions sunk out of loop
+   4 loop-rotate      - Number of loops rotated
+   1 loop-unroll      - Number of loops unrolled with run-time trip counts
+   1 loop-unroll      - Number of loops unrolled (completely or otherwise)
+  12 loop-unswitch    - Total number of instructions analyzed
+   3 loop-vectorize   - Number of loops analyzed for vectorization
+   3 mem2reg          - Number of PHI nodes inserted
+   4 mem2reg          - Number of alloca's promoted with a single store
+   3 memdep           - Number of block queries that were completely cached
+  36 memdep           - Number of fully cached non-local ptr responses
+  66 memdep           - Number of uncached non-local ptr responses
+  15 scalar-evolution - Number of loops with predictable loop counts
+   1 scalar-evolution - Number of loops without predictable loop counts
+   1 sccp             - Number of basic blocks unreachable
+  14 simplifycfg      - Number of blocks simplified
+   1 simplifycfg      - Number of common instructions sunk down to the end block
+   1 sroa             - Maximum number of partitions per alloca
+  10 sroa             - Maximum number of uses of a partition
+  31 sroa             - Number of alloca partition uses rewritten
+   7 sroa             - Number of alloca partitions formed
+   7 sroa             - Number of allocas analyzed for replacement
+  31 sroa             - Number of instructions deleted
+   7 sroa             - Number of allocas promoted to SSA values
+
+file: IntMM.bc
+===== Alias Analysis Evaluator Report =====
+  609 Total Alias Queries Performed
+  103 no alias responses (16.9%)
+  497 may alias responses (81.6%)
+  0 partial alias responses (0.0%)
+  9 must alias responses (1.4%)
+  Alias Analysis Evaluator Pointer Alias Summary: 16%/81%/0%/1%
+  1053 Total ModRef Queries Performed
+  691 no mod/ref responses (65.6%)
+  18 mod responses (1.7%)
+  153 ref responses (14.5%)
+  191 mod & ref responses (18.1%)
+  0 must responses (0.0%)
+  0 must mod responses (0.0%)
+  0 must ref responses (0.0%)
+  0 must mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 65%/1%/14%/18%/0%/0%/0%/0%
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+816 basicaa          - Number of times a GEP is decomposed
+ 35 bitcode-reader   - Number of Metadata records loaded
+  2 bitcode-reader   - Number of MDStrings loaded
+  1 build-libcalls   - Number of arguments inferred as nocapture
+  1 build-libcalls   - Number of functions inferred as nounwind
+  1 build-libcalls   - Number of arguments inferred as readonly
+  1 cgscc-passmgr    - Maximum CGSCCPassMgr iterations on one SCC
+  3 early-cse        - Number of instructions CSE'd
+  1 early-cse        - Number of load instructions CSE'd
+  4 functionattrs    - Number of arguments marked nocapture
+  4 functionattrs    - Number of functions marked as norecurse
+  2 functionattrs    - Number of arguments marked readonly
+  1 functionattrs    - Number of functions marked writeonly
+ 37 globalopt        - Number of globals marked unnamed_addr
+  2 globalsmodref-aa - Number of functions that do not access memory
+  3 globalsmodref-aa - Number of functions that only read memory
+  1 gvn              - Number of blocks merged
+  1 gvn              - Number of instructions deleted
+  1 gvn              - Number of loads deleted
+  5 indvars          - Number of IV sign/zero extends eliminated
+  6 indvars          - Number of loop exit tests replaced
+  5 indvars          - Number of indvars widened
+ 38 instcombine      - Number of insts combined
+  7 instcombine      - Number of dead inst eliminated
+  1 instcombine      - Number of reassociations
+ 11 instcount        - Number of Add insts
+ 10 instcount        - Number of And insts
+  6 instcount        - Number of BitCast insts
+ 55 instcount        - Number of Br insts
+ 38 instcount        - Number of Call insts
+ 19 instcount        - Number of GetElementPtr insts
+ 28 instcount        - Number of ICmp insts
+  8 instcount        - Number of InsertElement insts
+  9 instcount        - Number of IntToPtr insts
+  6 instcount        - Number of LShr insts
+ 21 instcount        - Number of Load insts
+ 12 instcount        - Number of Mul insts
+  6 instcount        - Number of Or insts
+ 34 instcount        - Number of PHI insts
+  9 instcount        - Number of PtrToInt insts
+  6 instcount        - Number of Ret insts
+  3 instcount        - Number of SExt insts
+  1 instcount        - Number of SRem insts
+  6 instcount        - Number of Shl insts
+ 41 instcount        - Number of Store insts
+  9 instcount        - Number of Trunc insts
+ 61 instcount        - Number of basic blocks
+  6 instcount        - Number of non-external functions
+338 instcount        - Number of instructions (of all types)
+  1 instsimplify     - Number of reassociations
+  5 licm             - Number of instructions hoisted out of loop
+ 12 licm             - Number of instructions sunk out of loop
+  6 loop-rotate      - Number of loops rotated
+  1 loop-unroll      - Number of loops completely unrolled
+  2 loop-unroll      - Number of loops unrolled (completely or otherwise)
+  8 loop-unswitch    - Total number of instructions analyzed
+  3 loop-vectorize   - Number of loops analyzed for vectorization
+  6 mem2reg          - Number of PHI nodes inserted
+  9 mem2reg          - Number of alloca's promoted with a single store
+  4 memdep           - Number of uncached non-local ptr responses
+ 10 memory-builtins  - Number of arguments with unsolved size and offset
+  2 reassociate      - Number of insts reassociated
+ 16 scalar-evolution - Number of loops with predictable loop counts
+  9 simplifycfg      - Number of blocks simplified
+  1 sroa             - Maximum number of partitions per alloca
+  6 sroa             - Maximum number of uses of a partition
+ 53 sroa             - Number of alloca partition uses rewritten
+ 15 sroa             - Number of alloca partitions formed
+ 15 sroa             - Number of allocas analyzed for replacement
+ 53 sroa             - Number of instructions deleted
+ 15 sroa             - Number of allocas promoted to SSA values
+

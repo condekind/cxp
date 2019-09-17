@@ -1,0 +1,11 @@
+-tti
+-verify
+-ee-instrument
+-targetlibinfo
+-tti
+-assumption-cache-tracker
+-profile-summary-info
+-forceattrs
+-basiccg
+-always-inline
+-verify
