@@ -8,9 +8,6 @@ statsdelim = \
 '                          ... Statistics Collected ...\n' + \
 '===-------------------------------------------------------------------------===\n\n'
 
-#def ln(s): return iter(lambda: s.split('\n'))
-
-#def ln(s, cond=lambda l: l.isspace()): return iter(x for x in s.split('\n') if not cond(x))
 
 if __name__ == '__main__':
 
@@ -19,8 +16,8 @@ if __name__ == '__main__':
 
 	infile = sys.argv[1]
 	outfile = sys.argv[2]
-	featurenames = {'suitename': 1, 'benchname': 2}	# ['feature1', 'feature2', ... ]
-	filefeatures = {}			# {'file1': {'feature1': value, ... }, ... }
+	featurenames = {'suitename': 1, 'benchname': 2}
+	filefeatures = {}
 
 	with open(infile, 'r') as finput, open(outfile, 'w') as foutput:
 		
