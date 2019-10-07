@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------
+
+Notes:
+This project makes heavy use of the '-stats' flag, and according to the "LLVM
+Programmer's Manual", in order to use said option, LLVM must be compiled with
+assertions enabled:
+http://llvm.org/docs/ProgrammersManual.html#the-statistic-class-stats-option
+
+ -DLLVM_ENABLE_ASSERTIONS=On
+
+In order to query if assertions were enabled, run:
+$ llvm-config --assertion-mode
+
+
+Compilation: tf
+$ cd tf
+
+Move all the benchmarks to tf's Bench's folder
+$ mv path/to/bench src_benchmarks
+
+Make sure tf's instrument.sh contains the desired passes
+$ vim instrument.sh
+
+Make sure temporary files are removed before starting
+$ COMPILE=0 RUN=0 CLEAN=1 ./run.sh
+
+Run tf's run.sh to compile all the benchmarks (without generating executables)
+$ COMPILE=1 RUN=0 CLEAN=0 JOBS=8 ./run.sh
+
+Check your results and leave the directory
+$ less output/stats.txt
+$ cd ..
+
+
+Extraction: cxp
+cd cxp
+
+Move the stats.txt file generated above to cxp's stats folder
+$ mv ../tf/output/stats.txt stats
+
+Run the parser, informing the .stats as input and an output file of choice
+$ python feature_parser.py stats/stats.txt stats/output.csv
+
+(Optional) Check the .csv with the program of choice and leave the directory
+$ tabview stats/output.csv
+$ cd ..
+
+
+Parsing/Analysis: bcmp
+
+Open the .csv with the program of choice and have fun
+$ ./jupyter-notebook
+
+-------------------------------------------------------------------------------
