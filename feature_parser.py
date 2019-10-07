@@ -1,10 +1,16 @@
 import sys
 import csv
 
-delim = \
+suitedelim = '>>> SUITE: '
+benchdelim = '>>> BENCHMARK: '
+statsdelim = \
 '===-------------------------------------------------------------------------===\n' + \
 '                          ... Statistics Collected ...\n' + \
 '===-------------------------------------------------------------------------===\n\n'
+
+#def ln(s): return iter(lambda: s.split('\n'))
+
+#def ln(s, cond=lambda l: l.isspace()): return iter(x for x in s.split('\n') if not cond(x))
 
 if __name__ == '__main__':
 
@@ -13,50 +19,43 @@ if __name__ == '__main__':
 
 	infile = sys.argv[1]
 	outfile = sys.argv[2]
-	featurenames = ['filename']	# ['feature1', 'feature2', ... ]
+	featurenames = {'suitename': 1, 'benchname': 2}	# ['feature1', 'feature2', ... ]
 	filefeatures = {}			# {'file1': {'feature1': value, ... }, ... }
-	cnt = 0						# number of files parsed
 
 	with open(infile, 'r') as finput, open(outfile, 'w') as foutput:
 		
-		filedata = [x for x in finput.read().split('file: ') if len(x) > 0]
+		rawstatlist = finput.read().split(suitedelim)
+		data = [x for x in rawstatlist if statsdelim in x]
+		#data = [ln(x) for x in data if statsdelim in x]
 		
-		for f in filedata:
+		for f in data:
 
-			cnt += 1
-			
-			if delim not in f:  # probably an error on that file
+			suitename, buff = f.split('\n', 1)
+			benchname, buff = buff.replace(benchdelim, '', 1).split(statsdelim, 1)
+			benchname = benchname.strip()
+
+			print('Reading {}/{}'.format(suitename, benchname))
+
+			if suitename + '/' + benchname in filefeatures:
+				print('Benchmark: {}/{} already visited, skipping.'.format(suitename, benchname))
 				continue
-
-			filename = f.split()[0]
-
-			if filename in filefeatures:
-				print('File: {} already visited, skipping.'.format(filename))
-				continue
-
 			else:
-				filefeatures[filename] = {'filename': filename}
+				filefeatures[suitename + '/' + benchname] = {
+				'suitename': suitename,
+				'benchname': benchname}
 
-			currfeatures = f.split(delim)[-1]
+			currfeatures = [x.strip() for x in buff.splitlines() if x and not x.isspace()]
 
-			for ftline in currfeatures.split('\n'):
-				ft = ''
+			for line in currfeatures:
+				stat, pname, _ , desc = line.split(None, 3)
+				if pname + '::' + desc not in featurenames:
+					featurenames[pname + '::' + desc] = len(featurenames) + 1
 
-				if not len(ftline):  # blank line, skip
-					continue
-				else:
-					ft = ftline
-
-				line = ft.split(None, 2)
-
-				if line[-2] + ' ' + line[-1] not in featurenames:
-					featurenames.append(line[-2] + ' ' + line[-1])
-
-				if line[-2] + ' ' + line[-1] not in filefeatures[filename]:
-					filefeatures[filename][line[-2] + ' ' + line[-1]] = int(line[0])
+				if pname + '::' + desc not in filefeatures[suitename + '/' + benchname]:
+					filefeatures[suitename + '/' + benchname][pname + '::' + desc] = int(stat)
 				
 				else:
-					filefeatures[filename][line[-2] + ' ' + line[-1]] += int(line[0])
+					filefeatures[suitename + '/' + benchname][pname + '::' + desc] += int(stat)
 
 		writer = csv.DictWriter(foutput, fieldnames=featurenames, restval='0')
 		writer.writeheader()
@@ -64,9 +63,14 @@ if __name__ == '__main__':
 		for k, v in filefeatures.items():
 			writer.writerow(v)
 
-		print('File entries parsed: {}'.format(len(filefeatures)))
-		if cnt - len(filefeatures) > 0:
-			print('File entries not parsed: {}'.format(cnt - len(filefeatures)))
+		print('File entries parsed: {}'.format(len(rawstatlist)))
+		if len(rawstatlist) - len(filefeatures) > 0:
+			print('File entries not parsed: {}'.format(len(rawstatlist) - len(filefeatures)))
+
+		# err = [x for x in rawstatlist if statsdelim not in x]
+		# print('Files with error: ')
+		# for f in err:
+		# 	print(f)
 
 
 
