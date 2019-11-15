@@ -16,6 +16,7 @@ if __name__ == '__main__':
 
 	infile = sys.argv[1]
 	outfile = sys.argv[2]
+
 	featurenames = {'suitename': 1, 'benchname': 2}
 	filefeatures = {}
 
@@ -63,12 +64,6 @@ if __name__ == '__main__':
 		print('File entries parsed: {}'.format(len(rawstatlist)))
 		if len(rawstatlist) - len(filefeatures) > 0:
 			print('File entries not parsed: {}'.format(len(rawstatlist) - len(filefeatures)))
-
-		# err = [x for x in rawstatlist if statsdelim not in x]
-		# print('Files with error: ')
-		# for f in err:
-		# 	print(f)
-
 
 
 
