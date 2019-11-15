@@ -1,0 +1,3 @@
+[submodule "llvm-tf"]
+	path = suites/LLVM-TestSuiteBenchmarks
+	url = git@github.com:lac-dcc/Benchmarks.git
