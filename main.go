@@ -17,14 +17,14 @@ type statistic struct {
 
 var (
 	defaultChSz       = 32
-	ch0Sz             *int
-	ch1Sz             *int
-	ch2Sz             *int
 	defaultNumWorkers = 1
+	ch0size           *int
+	ch1size           *int
+	ch2size           *int
 	numWorkers        *int
-	suitepath         *string
-	sBenchCmp         *bool
-	sBenchDir         *string
+	singlesrc         *bool
+	suitesdir         *string
+	infoFilename      *string
 )
 
 type benchInfo map[string]map[string][]statistic
@@ -73,6 +73,7 @@ func prod(ch chan<- string, p string) func(string, os.FileInfo, error) error {
 	}
 }
 
+// todo ... source info.sh, call llvm, get output, send to main
 func cons(ch <-chan string, wg *sync.WaitGroup) {
 
 	// loop only breaks when the channel is empty and closed
@@ -85,16 +86,31 @@ func cons(ch <-chan string, wg *sync.WaitGroup) {
 			os.Chdir(bench)
 			fmt.Printf("Starting benchmark: %s\n", bench)
 
-			// fnames, err := ReadDirNames(bench)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// 	continue
+			// // info.sh source alternative
+			// var benchEnv map[string]string
+			// benchEnv, _ = godotenv.Read(*infoFilename)
+			// for k, v := range benchEnv {
+			// 	fmt.Printf("Key: %s\nValue: %s\n\n", k, v)
 			// }
 
-			// { // todo ... source info.sh, call llvm, get output, send to main
-			// 	var vars map[string]expand.Variable
-			// 	var err error
-			// 	vars, err = shell.SourceFile("info.sh") // todo: add context w/ timeout
+			// BENCH_NAME
+			// SRC_FILES
+			// COMPILE_FLAGS
+
+			// var vars map[string]expand.Variable
+			// // If using shell.SourceFile from github/mvdan, DO NOT allow the user
+			// // to pass the name of the 'info.sh' file, as the method below allows
+			// // arbitrary code execution
+			// vars, err := shell.SourceFile("info.sh") // todo: add context w/ timeout
+			// if err != nil {
+			// 	// BENCH_NAME
+			// 	// SRC_FILES
+			// 	// COMPILE_FLAGS
+			// }
+			// if srcFiles, ok := vars["source_files"]; ok {
+			// 	//
+			// } else {
+			// 	//
 			// }
 
 		} else {
@@ -115,13 +131,13 @@ func max(a, b int) int {
 }
 
 func init() {
-	ch0Sz = flag.Int("buff", defaultChSz, "Channel buffer size")
-	ch1Sz = flag.Int("buff1", defaultChSz, "Channel buffer size")
-	ch2Sz = flag.Int("buff2", defaultChSz, "Channel buffer size")
+	ch0size = flag.Int("bsize", defaultChSz, "General channel buffer size")
+	ch1size = flag.Int("bcsize", defaultChSz, "Crawler channel buffer size")
+	ch2size = flag.Int("bxsize", defaultChSz, "Extraction channel buffer size")
 	numWorkers = flag.Int("workers", defaultNumWorkers, "Channel buffer size")
-	suitepath = flag.String("dir", "suites", "Path to suites directory")
-	sBenchCmp = flag.Bool("b", false, "Set to true to compile a single benchmark")
-	sBenchDir = flag.String("bdir", "", "Path to single benchmark folder")
+	singlesrc = flag.Bool("b", false, "Flag to compile a single benchmark")
+	suitesdir = flag.String("dir", "suites", "Path to suites directory")
+	infoFilename = flag.String("envfile", "info.sh", "Custom bench config file")
 }
 
 func main() {
@@ -133,21 +149,21 @@ func main() {
 	}
 
 	flag.Parse()
-	*ch0Sz = max(*ch0Sz, defaultChSz)
-	*ch1Sz = max(*ch1Sz, defaultChSz)
-	*ch2Sz = max(*ch2Sz, defaultChSz)
+	*ch0size = max(*ch0size, defaultChSz)
+	*ch1size = max(*ch1size, defaultChSz)
+	*ch2size = max(*ch2size, defaultChSz)
 	*numWorkers = max(*numWorkers, defaultNumWorkers)
 
-	ch := make(chan string, max(*ch0Sz, *ch1Sz))
+	ch := make(chan string, max(*ch0size, *ch1size))
 	var wg sync.WaitGroup
 
-	suitesdir := filepath.Join(basedir, *suitepath)
-	if fi, err := os.Stat(suitesdir); !fi.IsDir() {
+	suitespath := filepath.Join(basedir, *suitesdir)
+	if fi, err := os.Stat(suitespath); !fi.IsDir() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	suites, err := ReadDirNames(suitesdir)
+	suites, err := ReadDirNames(suitespath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -157,8 +173,8 @@ func main() {
 	wg.Add(1)
 	go func(wg *sync.WaitGroup) {
 		for _, suite := range suites {
-			crawler := prod(ch, filepath.Join(suitesdir, suite))
-			err = filepath.Walk(filepath.Join(suitesdir, suite), crawler)
+			crawler := prod(ch, filepath.Join(suitespath, suite))
+			err = filepath.Walk(filepath.Join(suitespath, suite), crawler)
 			if err != nil {
 				fmt.Println(err)
 			}

@@ -1,3 +1,5 @@
+// +build ignore
+
 import (
 	"os"
 	"path/filepath"

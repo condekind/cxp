@@ -1,0 +1,75 @@
+
+The following command was executed..
+
+# array that stores the info.sh files
+INFO_ARR=($( find src_benchmarks/**/* -name "info.sh" ));
+
+for i in ${INFO_ARR[@]} ; do
+	cat ${i} | grep "[^=]*=" ;
+done |
+while read line ; do
+	line=${line%%=*}
+	echo ${line##\#*} ;
+done |
+sort -u
+
+..in order to check which variables were set by specific benchmarks. Results:
+
+  bench_name            # used, same name as benchmark directory
+  COMPILE_FLAGS         # used !! 
+  COMPILER              # used, rare
+  HASH_PROGRAM_OUTPUT   # defined but unused
+  PROJ_SRC_DIR          # used !! check if there's any entry that isn't $(pwd)
+  RUN_OPTIONS           # input info, unused for this project
+  source_files          # used
+  STDIN                 # input info, unused for this project
+
+
+Checking values:
+
+COMPILE_FLAGS
+
+for i in ${INFO_ARR[@]} ; do
+  cat ${i} | grep "[^=]*="
+done |
+while read line ; do
+  if [[ ${line} =~ "COMPILE_FLAGS" ]] ; then
+    echo ${line}
+  fi
+done | sort -u
+
+Values found:
+
+  COMPILE_FLAGS=" "
+  COMPILE_FLAGS=""
+  COMPILE_FLAGS="-DBASE_ITERATIONS=25"
+  COMPILE_FLAGS=" -DNeedFunctionPrototypes=1 -DSASR "
+  COMPILE_FLAGS=" -DNOASM -DLLVM -lstdc++ -lm "
+  COMPILE_FLAGS="-DSMALL_PROBLEM_SIZE"
+  COMPILE_FLAGS=" -DTODD "
+  COMPILE_FLAGS=" -DUNIX "
+  COMPILE_FLAGS=" -DUNIX -DTRANSIZE=1050011 -DPROBES=8 -DREPORTPLY=8 "
+  COMPILE_FLAGS='-DVERSION="1.00" -DCOMPDATE=""today"" -DCFLAGS="" -DHOSTNAME=""thishost"" '
+  COMPILE_FLAGS="-I."
+  COMPILE_FLAGS=" -I. -DPOLYBENCH_DUMP_ARRAYS "
+  COMPILE_FLAGS=" -I. -lm -D_POSIX_SOURCE -DHYPRE_TIMING -DHYPRE_SEQUENTIAL"
+  COMPILE_FLAGS=" -lm "
+  COMPILE_FLAGS="-lm"
+  COMPILE_FLAGS=" -lm -DFP_ABSTOLERANCE=1e-5 "
+  COMPILE_FLAGS=" -lm -DHAVEMPGLIB -DLAMEPARSE -DNDEBUG -D__NO_MATH_INLINES -O -DLAMESNDFILE "
+  COMPILE_FLAGS=" -lm -D_POSIX_SOURCE -DHYPRE_TIMING -DHYPRE_SEQUENTIAL "
+  COMPILE_FLAGS=" -lm -DTORONTO "
+  COMPILE_FLAGS=" -lm -DVERIFICATION "
+  COMPILE_FLAGS=" -lm -fno-exceptions -lstdc++ "
+  COMPILE_FLAGS=" -lm -std=gnu99 "
+  COMPILE_FLAGS=" -lm -std=gnu99"
+  COMPILE_FLAGS="-std=gnu89"
+  COMPILE_FLAGS=" -std=gnu89 -DNOMEMOPT "
+  COMPILE_FLAGS=" -std=gnu99 "
+  COMPILE_FLAGS=" -std=gnu99 -lm "
+  source_files=(Calignm1.c constants.c defs.c Falign.c fft.c fftFunctions.c Galign11.c COMPILE_FLAGS=" -DLLVM "
+  source_files=("cfrac.c" "pops.c" "pconst.c" "pio.c" COMPILE_FLAGS="-lm -DNOMEMOPT"
+  source_files=('commands.c' 'job.c' 'dir.c' 'file.c' 'load.c' 'misc.c' 'main.c' 'read.c' COMPILE_FLAGS="-DHAVE_SIGLIST -DNO_LDAV -DNOMEMOPT -DPOSIX"
+  source_files=("gsmain.c" "gs.c" "gp_unix.c" "utrace.c" COMPILE_FLAGS=" -lm -DNOMEMOPT -DGS_LIB_DEFAULT=\"${PROJ_SRC_DIR}:${PROJ_SRC_DIR}/fonts\""
+
+## OBS.: I'll probably change source_files to uppercase in the future
