@@ -15,18 +15,6 @@ type statistic struct {
 	description string
 }
 
-var (
-	defaultChSz       = 32
-	defaultNumWorkers = 1
-	ch0size           *int
-	ch1size           *int
-	ch2size           *int
-	numWorkers        *int
-	singlesrc         *bool
-	suitesdir         *string
-	infoFilename      *string
-)
-
 type benchInfo map[string]map[string][]statistic
 
 func ReadDirNames(s string) ([]string, error) {
@@ -130,16 +118,6 @@ func max(a, b int) int {
 	}
 }
 
-func init() {
-	ch0size = flag.Int("bsize", defaultChSz, "General channel buffer size")
-	ch1size = flag.Int("bcsize", defaultChSz, "Crawler channel buffer size")
-	ch2size = flag.Int("bxsize", defaultChSz, "Extraction channel buffer size")
-	numWorkers = flag.Int("workers", defaultNumWorkers, "Channel buffer size")
-	singlesrc = flag.Bool("b", false, "Flag to compile a single benchmark")
-	suitesdir = flag.String("dir", "suites", "Path to suites directory")
-	infoFilename = flag.String("envfile", "info.sh", "Custom bench config file")
-}
-
 func main() {
 
 	basedir, err := os.Getwd()
@@ -148,13 +126,15 @@ func main() {
 		os.Exit(1)
 	}
 
+	var (
+		defChSz    = 32
+		ch0size    = flag.Int("bsize", defChSz, "Max channel buffer size")
+		numWorkers = flag.Int("workers", 1, "Number of worker threads")
+		suitesdir  = flag.String("dir", "suites", "Path to suites directory")
+	)
 	flag.Parse()
-	*ch0size = max(*ch0size, defaultChSz)
-	*ch1size = max(*ch1size, defaultChSz)
-	*ch2size = max(*ch2size, defaultChSz)
-	*numWorkers = max(*numWorkers, defaultNumWorkers)
 
-	ch := make(chan string, max(*ch0size, *ch1size))
+	ch := make(chan string, max(*ch0size, defChSz))
 	var wg sync.WaitGroup
 
 	suitespath := filepath.Join(basedir, *suitesdir)
@@ -190,4 +170,5 @@ func main() {
 	}
 
 	wg.Wait()
+	fmt.Printf("%d workers, buffer size: %d\n", *numWorkers, *ch0size)
 }
